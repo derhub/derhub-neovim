@@ -1,7 +1,9 @@
 return {
-  "olimorris/onedarkpro.nvim",
+	-- "olimorris/onedarkpro.nvim",
+  'Mofiqul/vscode.nvim',
   priority = 1000, -- Ensure it loads first
   config = function()
-    vim.cmd('colorscheme onedark')
+    vim.cmd('colorscheme vscode')
+    vim.o.background = 'dark'
   end
 }

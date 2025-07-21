@@ -10,6 +10,7 @@ return {
 
     nvimtree.setup {
       view = {
+        side = 'left',
         width = 35,
         relativenumber = true,
       },
@@ -32,7 +33,7 @@ return {
       -- window splits
       actions = {
         open_file = {
-          quit_on_open = true,
+          quit_on_open = false,
           window_picker = {
             enable = false,
           },

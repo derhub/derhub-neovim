@@ -38,7 +38,11 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store" },
+        custom = { 
+		".DS_Store", 
+		".idea",
+		".git"
+	},
       },
       git = {
         ignore = false,

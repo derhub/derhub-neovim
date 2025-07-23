@@ -3,7 +3,7 @@ return { -- Useful plugin to show you pending keybinds.
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 500
+    vim.o.timeoutlen = 800
   end,
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)

@@ -10,4 +10,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup 'derhub.plugins'
+if vim.g.vscode then
+  require('lazy').setup 'derhub.vscode'
+else
+  require('lazy').setup 'derhub.plugins'
+end

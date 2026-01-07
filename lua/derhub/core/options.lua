@@ -1,7 +1,7 @@
 vim.cmd 'let g:netrw_liststyle = 3'
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 

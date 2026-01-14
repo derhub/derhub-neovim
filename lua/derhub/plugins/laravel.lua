@@ -41,7 +41,7 @@ return {
   opts = {
     features = {
       pickers = {
-        provider = "telescope", -- "snacks | telescope | fzf-lua | ui-select"
+        provider = "snacks", -- "snacks | telescope | fzf-lua | ui-select"
       },
     },
   },

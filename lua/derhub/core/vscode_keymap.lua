@@ -21,6 +21,12 @@ keymap('x', 'K', ":move '<-2<CR>gv-gv", opts)
 keymap('n', '<Esc>', '<Esc>:noh<CR>', opts) -- Remove search highlighting
 keymap('v', 'p', '"_dP', opts)              -- Paste preserves yanked text
 
+-- Window focus (match Neovim Ctrl-h/j/k/l)
+keymap('n', '<C-h>', "<cmd>lua require('vscode').action('workbench.action.focusLeftGroup')<CR>", opts)
+keymap('n', '<C-l>', "<cmd>lua require('vscode').action('workbench.action.focusRightGroup')<CR>", opts)
+keymap('n', '<C-j>', "<cmd>lua require('vscode').action('workbench.action.focusBelowGroup')<CR>", opts)
+keymap('n', '<C-k>', "<cmd>lua require('vscode').action('workbench.action.focusAboveGroup')<CR>", opts)
+
 -- ========================================
 -- FILE & WORKSPACE MANAGEMENT
 -- ========================================
@@ -39,6 +45,9 @@ keymap({ 'n', 'v' }, '<leader>e', "<cmd>lua require('vscode').action('workbench.
 keymap({ 'n', 'v' }, '<leader>fr', "<cmd>lua require('vscode').action('workbench.action.openRecent')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>w', "<cmd>lua require('vscode').action('workbench.action.files.save')<CR>", opts)
 
+-- Diagnostics quick access (sync with Neovim <leader>q)
+keymap({ 'n', 'v' }, '<leader>q', "<cmd>lua require('vscode').action('workbench.actions.view.problems')<CR>", opts)
+
 -- Editor management
 keymap({ 'n', 'v' }, '<leader>qq', "<cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>qa', "<cmd>lua require('vscode').action('workbench.action.closeAllEditors')<CR>", opts)
@@ -51,6 +60,10 @@ keymap({ 'n', 'v' }, '<leader>v', "<cmd>lua require('vscode').action('workbench.
 keymap({ 'n', 'v' }, '<leader>h', "<cmd>lua require('vscode').action('workbench.action.splitEditorOrthogonal')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>o', "<cmd>lua require('vscode').action('workbench.action.focusNextGroup')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>x', "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR>", opts)
+-- Split synonyms to match Neovim
+keymap({ 'n', 'v' }, '<leader>pv', "<cmd>lua require('vscode').action('workbench.action.splitEditor')<CR>", opts)
+keymap({ 'n', 'v' }, '<leader>ph', "<cmd>lua require('vscode').action('workbench.action.splitEditorOrthogonal')<CR>", opts)
+keymap({ 'n', 'v' }, '<leader>pe', "<cmd>lua require('vscode').action('workbench.action.evenEditorWidths')<CR>", opts)
 
 -- ========================================
 -- SEARCH & REPLACE
@@ -58,6 +71,11 @@ keymap({ 'n', 'v' }, '<leader>x', "<cmd>lua require('vscode').action('workbench.
 keymap({ 'n', 'v' }, '<leader>fg', "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>fR', "<cmd>lua require('vscode').action('workbench.action.replaceInFiles')<CR>", opts)
 keymap({ 'n', 'v' }, '<leader>fw', "<cmd>lua require('vscode').action('editor.action.addSelectionToNextFindMatch')<CR>", opts)
+
+-- Line duplication and movement (sync with Neovim)
+keymap({ 'n', 'v' }, '<C-d>', "<cmd>lua require('vscode').action('editor.action.copyLinesDownAction')<CR>", opts)
+keymap({ 'n', 'v' }, '<S-Up>', "<cmd>lua require('vscode').action('editor.action.moveLinesUpAction')<CR>", opts)
+keymap({ 'n', 'v' }, '<S-Down>', "<cmd>lua require('vscode').action('editor.action.moveLinesDownAction')<CR>", opts)
 
 -- ========================================
 -- CODE NAVIGATION & SYMBOLS
